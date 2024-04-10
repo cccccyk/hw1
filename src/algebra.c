@@ -49,14 +49,35 @@ Matrix sub_matrix(Matrix a, Matrix b)
 
 Matrix mul_matrix(Matrix a, Matrix b)
 {
-    // ToDo
-    return create_matrix(0, 0);
+    // 检查是否满足矩阵乘法的条件：a的列数等于b的行数
+    if (a.cols != b.rows) {
+        printf("Error: The number of cols of matrix a must be equal to the number of rows of matrix b.\n");
+        return create_matrix(0, 0); // 返回一个空矩阵
+    }
+
+    Matrix result = create_matrix(a.rows, b.cols); // 创建结果矩阵
+    for (int i = 0; i < a.rows; i++) {
+        for (int j = 0; j < b.cols; j++) {
+            // 计算结果矩阵的每个元素
+            result.data[i][j] = 0; // 初始化
+            for (int k = 0; k < a.cols; k++) {
+                result.data[i][j] += a.data[i][k] * b.data[k][j];
+            }
+        }
+    }
+    return result;
 }
 
 Matrix scale_matrix(Matrix a, double k)
 {
-    // ToDo
-    return create_matrix(0, 0);
+    Matrix result = create_matrix(a.rows, a.cols); // 创建结果矩阵
+    for (int i = 0; i < a.rows; i++) {
+        for (int j = 0; j < a.cols; j++) {
+            // 每个元素乘以k
+            result.data[i][j] = a.data[i][j] * k;
+        }
+    }
+    return result;
 }
 
 Matrix transpose_matrix(Matrix a)
