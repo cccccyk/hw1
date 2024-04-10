@@ -82,7 +82,6 @@ Matrix scale_matrix(Matrix a, double k)
 
 Matrix transpose_matrix(Matrix a)
 {
-    Matrix transpose_matrix(Matrix a) {
     Matrix result = create_matrix(a.cols, a.rows); // 创建转置矩阵，行列数互换
     for (int i = 0; i < a.rows; i++) {
         for (int j = 0; j < a.cols; j++) {
@@ -92,30 +91,11 @@ Matrix transpose_matrix(Matrix a)
     return result;
 }
 
-}
 
 double det_matrix(Matrix a)
 {
-    double det_matrix(Matrix a) {
-    if (a.rows != a.cols) {
-        printf("Error: The matrix must be a square matrix.\n");
-        return 0; // 非方阵没有行列式
-    }
-
-    // 示例仅处理2x2或3x3的方阵
-    if (a.rows == 2) {
-        return a.data[0][0] * a.data[1][1] - a.data[1][0] * a.data[0][1];
-    } else if (a.rows == 3) {
-        // 计算3x3矩阵的行列式
-        double det = 0;
-        // 此处应该是计算3x3矩阵行列式的代码，省略为简化显示
-        return det;
-    } else {
-        printf("Error: Matrix size not supported for determinant calculation.\n");
-        return 0; // 不支持的矩阵尺寸
-    }
-}
-
+    // ToDo
+    return 0;
 }
 
 Matrix inv_matrix(Matrix a)
