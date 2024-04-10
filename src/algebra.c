@@ -15,7 +15,7 @@ Matrix add_matrix(Matrix a, Matrix b)
 
     if (a.rows != b.rows || a.cols != b.cols) {
         // 如果不相同，则打印错误消息并返回一个空矩阵
-        printf("Error: Matrices dimensions do not match.\n");
+        printf("Error: Matrix a and b must have the same rows and cols.\n");
         return create_matrix(0, 0); // 返回一个空的矩阵
     }
 
@@ -33,7 +33,7 @@ Matrix sub_matrix(Matrix a, Matrix b)
 {
     if (a.rows != b.rows || a.cols != b.cols) {
         // 如果不相同，则打印错误消息并返回一个空矩阵
-        printf("Error: Matrices dimensions do not match.\n");
+        printf("Error: Matrix a and b must have the same rows and cols.\n");
         return create_matrix(0, 0); // 返回一个空的矩阵
     }
 
