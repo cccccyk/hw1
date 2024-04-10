@@ -12,6 +12,13 @@ Matrix create_matrix(int row, int col)
 
 Matrix add_matrix(Matrix a, Matrix b)
 {
+
+    if (a.rows != b.rows || a.cols != b.cols) {
+        // 如果不相同，则打印错误消息并返回一个空矩阵
+        printf("Error: Matrices dimensions do not match.\n");
+        return create_matrix(0, 0); // 返回一个空的矩阵
+    }
+
     Matrix result = create_matrix(a.rows, a.cols); // 创建一个新的矩阵来存储结果
     for (int i = 0; i < a.rows; i++) {
         for (int j = 0; j < a.cols; j++) {
@@ -24,6 +31,12 @@ Matrix add_matrix(Matrix a, Matrix b)
 
 Matrix sub_matrix(Matrix a, Matrix b)
 {
+    if (a.rows != b.rows || a.cols != b.cols) {
+        // 如果不相同，则打印错误消息并返回一个空矩阵
+        printf("Error: Matrices dimensions do not match.\n");
+        return create_matrix(0, 0); // 返回一个空的矩阵
+    }
+
         Matrix result = create_matrix(a.rows, a.cols); // 创建一个新的矩阵来存储结果
     for (int i = 0; i < a.rows; i++) {
         for (int j = 0; j < a.cols; j++) {
